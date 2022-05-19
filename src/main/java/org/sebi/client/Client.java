@@ -9,7 +9,7 @@ import javax.ws.rs.QueryParam;
 import java.util.List;
 
 @Path("/rest/incidents")
-@RegisterRestClient
+@RegisterRestClient(configKey = "inc")
 public interface Client {
 
     @GET

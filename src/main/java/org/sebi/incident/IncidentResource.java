@@ -15,7 +15,7 @@ public class IncidentResource {
     @RestClient
     Client client;
 
-    @ConfigProperty(name = "org.sebi.incident.incidentservice.mp.rest.url")
+    @ConfigProperty(name = "apikey")
     String key;
     
     @GET
