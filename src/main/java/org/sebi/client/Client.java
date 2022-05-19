@@ -13,5 +13,5 @@ import java.util.List;
 public interface Client {
 
     @GET
-    List<Incident> getIncidents(@QueryParam("APIKEY") String key);
+    List<Incident> getIncidents(@QueryParam("api_key") String key);
 }
