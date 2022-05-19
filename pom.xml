@@ -6,6 +6,9 @@
   <artifactId>antennas-front</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <properties>
+    <jkube.build.strategy>s2i</jkube.build.strategy>
+    <jkube.generator.name>quay.io/hackathonerable/antennas-front</jkube.generator.name>
+    <jkube.replicas>5</jkube.replicas>
     <compiler-plugin.version>3.8.1</compiler-plugin.version>
     <failsafe.useModulePath>false</failsafe.useModulePath>
     <maven.compiler.release>11</maven.compiler.release>
@@ -105,6 +108,21 @@
             <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
             <maven.home>${maven.home}</maven.home>
           </systemPropertyVariables>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.jkube</groupId>
+        <artifactId>openshift-maven-plugin</artifactId>
+        <version>1.7.0</version>
+        <configuration>
+          <authConfig>
+            <username>hackathonerable</username>
+            <password>M8e2jmJC6bbWmx3r</password>
+          </authConfig>
+          <access>
+            <namespace>ulysse-ns-jkube</namespace>
+          </access>
+          <registry>quay.io</registry>
         </configuration>
       </plugin>
     </plugins>
