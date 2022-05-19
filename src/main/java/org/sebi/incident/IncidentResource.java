@@ -26,7 +26,9 @@ public class IncidentResource {
        return client.getIncidents(key);
     }
 
-    public Response fallbackIncidents() {
-        return Response.ok("fallback").build();
+    public List<Incident> fallbackIncidents() {
+        Incident i = new Incident();
+        i.description = "fallback incident";
+        return List.of(i);
     }
 }
